@@ -5,7 +5,9 @@ https://superheroapi.com/
 
 ## Link WireFrame: 
 Página Inicial: https://wireframe.cc/1er8cE
+
 Página de Detalhes: https://wireframe.cc/sqw74A
+
 Página Inicial com Filtro: https://wireframe.cc/iLbomr
 
 ## Link Protótipo(Figma):
