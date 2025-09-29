@@ -6,7 +6,7 @@
 }
 
 body{
-    height: 100vh;
+    min-height: 100vh;  
 }
 
 header{
@@ -25,9 +25,10 @@ header input{
 
 main{
     margin: 20px;
+    flex-grow: 1;
 }
 
-.herois{
+div{
     margin: 10px;
     display: flex;
     align-items: center;
@@ -37,12 +38,12 @@ main{
 }
 
 
-.herois img{
+div img{
     height: 500px;
-    width: 500px;
+
 }
 
-.heroi p{
+div p{
     display: flex;
     align-items: center;
     justify-content: center;

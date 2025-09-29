@@ -19,13 +19,17 @@ async function criarImagem(){
     const heroi = document.getElementById( 'inputHeroi').value
 
     const herois = await buscarImagem(heroi)
+
+    const div = document.createElement('div')
     
     herois.forEach((url)=>{
         const img = document.createElement('img')
         // Usando proxy alternativo
         img.src = 'https://corsproxy.io/?' + url.image.url
-        main.appendChild(img)
+        main.appendChild(div)
+        div.appendChild(img)
     })
+
 }
 
 const btn = function(event){
