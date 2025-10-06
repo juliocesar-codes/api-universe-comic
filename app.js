@@ -5,17 +5,35 @@ async function buscarImagem(personagem) {
     const response = await fetch(url);
     const imagens = await response.json();    
     imagens.results.forEach(item =>{
-        console.log(item.image.url) 
     })
 
     return imagens.results
     
 }
 
-async function criarImagem(){
-
+async function detalheHeroi(url){
     const main = document.getElementById('main')
     main.textContent = ''
+
+    const h2 = document.createElement('h2')
+    h2.textContent = "Página de Detalhes"
+
+    console.log(url)
+
+    const nome = document.createElement('p')
+    nome.textContent = url.name
+
+    const image = document.createElement('img')
+    image.src = 'https://corsproxy.io/?' + url.image.url
+
+    main.appendChild(h2)
+    main.appendChild(image)
+    main.appendChild(nome)
+}
+
+async function criarImagem(){
+    main.textContent = ''
+    
     const heroi = document.getElementById( 'inputHeroi').value
 
     const herois = await buscarImagem(heroi)
@@ -26,8 +44,17 @@ async function criarImagem(){
         const img = document.createElement('img')
         // Usando proxy alternativo
         img.src = 'https://corsproxy.io/?' + url.image.url
+
+        const a = document.createElement('a')
+        a.addEventListener('click', function(){
+
+            detalheHeroi(url);
+        })
+
         main.appendChild(div)
-        div.appendChild(img)
+        div.appendChild(a)
+        a.appendChild(img)
+        
     })
 
 }
@@ -37,3 +64,4 @@ const btn = function(event){
         criarImagem()
     }
 }
+
