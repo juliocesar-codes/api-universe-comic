@@ -6,7 +6,7 @@
 }
 
 body {
-    min-height: 100vh;
+    height: 100vh;
 }
 
 header {
@@ -72,4 +72,31 @@ footer {
 
 .divDetalhes img {
     height: 350px;
+}
+
+.pagina-detalhes {
+    display: flex;
+}
+
+.detalhesText {
+    display: flex;
+}
+
+.detalhesList {
+    gap: 300px;
+}
+
+.teste {
+    display: flex;
+    flex-direction: column;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+}
+
+.divDetalhes {
+    display: flex;
+    flex-direction: column;
 }
