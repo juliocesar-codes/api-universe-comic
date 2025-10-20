@@ -27,12 +27,14 @@ async function afiliacaoHeroi(afiliacao) {
 
     console.log(imagens)
 
+    const div = document.createElement('div')
+
+
     imagens.forEach(item => {
         // console.log(item.connections.groupAffiliation)
         if (item.connections.groupAffiliation.includes(afiliacao)) {
             console.log(item.name)
 
-            const div = document.createElement('div')
 
             const img = document.createElement('img')
                 // Usando proxy alternativo
