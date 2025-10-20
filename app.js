@@ -34,7 +34,7 @@ async function afiliacaoHeroi(afiliacao) {
         if (item.connections.groupAffiliation.includes(afiliacao)) {
             console.log(item.name)
 
-
+// 
             const img = document.createElement('img')
                 // Usando proxy alternativo
             img.src = 'https://corsproxy.io/?' + item.images.lg
