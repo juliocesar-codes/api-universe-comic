@@ -20,7 +20,11 @@ async function afiliacaoHeroi(afiliacao) {
     const response = await fetch(url2);
     const imagens = await response.json();
 
+
     main.textContent = ''
+
+    console.log(afiliacao)
+
 
     const div = document.createElement('div')
 
@@ -28,6 +32,7 @@ async function afiliacaoHeroi(afiliacao) {
     imagens.forEach(item => {
         // console.log(item.connections.groupAffiliation)
         if (item.connections.groupAffiliation.includes(afiliacao)) {
+            console.log(item.name)
 
 
             const img = document.createElement('img')
@@ -37,6 +42,7 @@ async function afiliacaoHeroi(afiliacao) {
             const heroi = item
 
             const a = document.createElement('a')
+            a.href = '#'
             a.addEventListener('click', function() {
 
                 detalheHeroi(heroi);
@@ -72,6 +78,8 @@ async function detalheHeroi(heroi) {
 
     const afiliacoesArray = afiliacoesString.split(',').map(item => item.trim())
 
+    console.log(afiliacoesArray)
+
     const nome = document.createElement('h3')
     nome.textContent = heroi.name
 
@@ -89,6 +97,7 @@ async function detalheHeroi(heroi) {
 
 
         const a = document.createElement('a')
+        a.href = '#'
         a.addEventListener('click', function() {
             afiliacaoHeroi(afiliacao)
 
@@ -108,6 +117,7 @@ async function criarImagem() {
     const herois = await buscarImagem(heroi)
 
     const div = document.createElement('div')
+    main.appendChild(div)
 
     herois.forEach((url) => {
         const img = document.createElement('img')
@@ -115,12 +125,13 @@ async function criarImagem() {
         img.src = 'https://corsproxy.io/?' + url.image.url
 
         const a = document.createElement('a')
-        a.addEventListener('click', function() {
-
+        a.href = '#'
+        a.addEventListener('click', function(event) {
+            event.preventDefault()
             detalheHeroi(url);
         })
 
-        main.appendChild(div)
+        
         div.appendChild(a)
         a.appendChild(img)
 
