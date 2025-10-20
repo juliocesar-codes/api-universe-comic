@@ -20,12 +20,7 @@ async function afiliacaoHeroi(afiliacao) {
     const response = await fetch(url2);
     const imagens = await response.json();
 
-
     main.textContent = ''
-
-    console.log(afiliacao)
-
-    console.log(imagens)
 
     const div = document.createElement('div')
 
@@ -33,7 +28,6 @@ async function afiliacaoHeroi(afiliacao) {
     imagens.forEach(item => {
         // console.log(item.connections.groupAffiliation)
         if (item.connections.groupAffiliation.includes(afiliacao)) {
-            console.log(item.name)
 
 
             const img = document.createElement('img')
@@ -77,8 +71,6 @@ async function detalheHeroi(heroi) {
     // Esta linha é equivalente a um if/else porém mais conciso
 
     const afiliacoesArray = afiliacoesString.split(',').map(item => item.trim())
-
-    console.log(afiliacoesArray)
 
     const nome = document.createElement('h3')
     nome.textContent = heroi.name
